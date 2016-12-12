@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+<meta content="no-cache" http-equiv="pragma">
+<meta content="0" http-equiv="expires">
+<meta content="telephone=no, address=no" name="format-detection">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="css/css.css">
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/swiper.animate1.0.2.min.js"></script>
+
+<script>
+$(function(){
+	$('#audio_btn').click(function(){	
+		$("audio").toggle();
+	})	
+	
+	var audio = document.getElementById('media');  
+	$('#audio_btn').click(function(){
+		$(this).toggleClass("off");
+		$('#yinfu').toggleClass("rotate");
+	}) 
+	
+/*音乐*/
+var btn_au = $(".fn-audio").find(".btn");
+var audio = $('#media');
+var isPlaying = false;
+function playAudio() {
+    var audio = $('#media');
+    if (audio.attr('src') == undefined) {
+        audio.attr('src', audio.data('src'));
+    }
+ 	audio[0].play();
+    isPlaying = true;
+}
+function pauseAudio(){
+	//ios微信框架固定底部出现偏移
+	setTimeout(function(){
+	$(window).scrollTop(1);
+	},0);
+	audio[0].pause();
+	isPlaying = false;
+}
+function audio_switch() {
+    if (isPlaying) {
+        //关闭声音
+        pauseAudio();
+    }
+    //开启声音
+    else {
+        playAudio();
+    }
+}
+$(function(){
+	playAudio();
+	$("#audio_btn").on('click', audio_switch);
+})
+})
+</script>
+<title></title>
+</head>
+
+<body>
+
+<div class="swiper-container">
+        <div id="audio_btn" class="video_exist play_yinfu" style="display: block;">
+            <div id="yinfu" class="rotate"></div>
+            <audio loop src="music/music.mp3" id="media" autoplay="" preload=""></audio>
+        </div>
+	 <div class="swiper-wrapper">
+     	<section class="swiper-slide" id="s1">
+        	<div class="w0 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="0.3s"></div>
+            <div class="w1 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="0.8s"></div>
+            <div class="w2 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.5s"></div>
+            <div class="w3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+            <div class="w4 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+        </section>
+        <section class="swiper-slide" id="s2">
+        	<div class="w0"></div>
+            <div class="w1 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="0.3s"></div>
+            <div class="w2 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s"></div>
+            <div class="w3 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.8s"></div>
+            <div class="w4 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+        </section>
+        <section class="swiper-slide" id="s3">
+        	<div class="w1 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.1s"></div>
+            <div class="w2 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.8s"></div>
+            <div class="w3 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="0.5s"></div>
+            <div class="w4 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+        </section>
+        <section class="swiper-slide" id="s4">
+        	<div class="w1 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.1s"></div>
+            <div class="w2 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.8s"></div>
+            <div class="w3 ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s"></div>
+            <div class="w4 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+            <div class="w5 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+            <div class="w6 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+            <div class="w7 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+        </section><strong></strong>
+        <section class="swiper-slide" id="s5">
+        	<div class="w1 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.1s"></div>
+            <div class="w2 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.8s"></div>
+            <div class="w3 ani" swiper-animate-effect="clock" swiper-animate-duration="2s" swiper-animate-delay="0.5s"></div>
+            <div class="w4 ani" swiper-animate-effect="fadeInshake" swiper-animate-duration="2s" swiper-animate-delay="1.2s"></div>
+            <div class="w5 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+            <div class="w6 ani" swiper-animate-effect="fadeInshake" swiper-animate-duration="2s" swiper-animate-delay="1.8s"></div>
+            <div class="w7 ani" swiper-animate-effect="fadeInshake" swiper-animate-duration="2s" swiper-animate-delay="2.4s"></div>
+            <div class="w8 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+        </section>
+        <section class="swiper-slide" id="s6">
+        	<div class="w1 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.1s"></div>
+            <div class="w2 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.8s"></div>
+            <div class="w3 ani" swiper-animate-effect="flipInY" swiper-animate-duration="1.5s" swiper-animate-delay="0.5s"></div>
+            <div class="w4 ani" swiper-animate-effect="rollIn" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+            <div class="w5 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+            <div class="w6 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+        </section>
+        <section class="swiper-slide" id="s7">
+        	<div class="w1 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.1s"></div>
+            <div class="w2 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.8s"></div>
+            <div class="w3 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1.5s" swiper-animate-delay="0.5s"></div>
+            <div class="w4 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1.5s" swiper-animate-delay="1s"></div>
+            <div class="w5 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1.5s" swiper-animate-delay="1.5s"></div>
+            <div class="w6 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1.5s" swiper-animate-delay="2s"></div>
+            <div class="w7 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+        </section>
+        <section class="swiper-slide" id="s8">
+        	<div class="w1 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.1s"></div>
+            <div class="w2 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.8s"></div>
+            <div class="w3 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1.5s" swiper-animate-delay="0.5s"></div>
+            <div class="w4 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1.5s" swiper-animate-delay="1s"></div>
+            <div class="w5 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+            <div class="w6 ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+            <div class="w7 ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+            <div class="w8 ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="1.2s"></div>
+        </section>
+     </div>
+    <div class="swiper-scrollbar"></div>
+    <img src="images/arrow.png" id="array" class="resize">
+</div>
+
+<script>
+
+var a=new Swiper(".swiper-container",{
+	onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+    swiperAnimateCache(swiper); //隐藏动画元素 
+    swiperAnimate(swiper); //初始化完成开始动画
+	  }, 
+	  onSlideChangeEnd: function(swiper){ 
+		swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+	  } ,
+	// effect : 'cube',
+	cube: {
+	  slideShadows: false,
+	  shadow: false,
+	  shadowOffset: 0,
+	  shadowScale:0
+	},
+	scrollbar:'.swiper-scrollbar',
+	scrollbarHide:true,	
+    direction: 'vertical',
+
+	onSlideChangeStart:function(){
+		if(a.activeIndex==7)
+		{
+			$("#array").hide();	
+		}else{
+			$("#array").show();	
+		}
+		},
+	// onSlideChangeEnd:function(){
+	// 	swiperAnimate(swiper);
+ //    },
+	onTransitionEnd: function(swiper){
+		swiperAnimate(swiper);
+	}});
+</script> 
+</body>
+</html>
